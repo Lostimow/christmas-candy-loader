@@ -24,15 +24,6 @@ A Christmas candy-inspired loading animation built with HTML and CSS without a s
 - Keyframe animations
 - Media queries
 
-## Project Structure
-candy-loader/
-asset/
-  screenshot.png
-index.html
-style.css
-README.md
-LICENSE
-
 ## Getting Started
 
 Simply open `index.html` in your browser. No installation or build process required.
