@@ -26,10 +26,12 @@ A Christmas candy-inspired loading animation built with HTML and CSS without a s
 
 ## Project Structure
 candy-loader/
-├── index.html
-├── style.css
-├── README.md
-└── LICENSE
+asset/
+  screenshot.png
+index.html
+style.css
+README.md
+LICENSE
 
 ## Getting Started
 
