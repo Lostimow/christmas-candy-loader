@@ -1,0 +1,64 @@
+/* Center the candy and leave the rest of the wrapping off-screen */
+body {
+	display: grid;
+	place-items: center;
+	min-height: 100svh;
+	margin: 0;
+	background: #111;
+}
+
+/* Scale the capsule and its stripes together using the viewport's shorter side */
+.candy-loader {
+	--stripe-size: 18.8562vmin;
+
+	position: relative;
+	width: 66.6667vmin;
+	aspect-ratio: 100 / 9;
+	background: repeating-linear-gradient(
+		135deg,
+		#f2f6f6 0 25%,
+		#af0404 0 50%
+	) 0 0 / var(--stripe-size) var(--stripe-size);
+	border-radius: 999px;
+	box-shadow: 0 0 3.1667vmin #f2f6f640;
+	animation: slide-stripes 1s linear infinite;
+}
+
+/* The square tile now keeps each diagonal stripe aligned with its next-door neighbor */
+.candy-loader::before,
+.candy-loader::after {
+	content: "";
+	position: absolute;
+	height: 11.1111%;
+	border-radius: 999px;
+}
+
+/* A thin highlight suggests a glossy surface without adding another candy layer */
+.candy-loader::before {
+	top: 19.4444%;
+	left: 5%;
+	right: 5%;
+	background: #fff6;
+}
+
+.candy-loader::after {
+	bottom: 0;
+	left: 3.75%;
+	right: 3.75%;
+	background: #0003;
+}
+
+/* Move one whole tile so the seam stays undercover when the animation restarts */
+
+@keyframes slide-stripes {
+	to {
+		background-position: var(--stripe-size) 0;
+	}
+}
+
+/* Keep the candy still when the viewer requests less motion */
+@media (prefers-reduced-motion: reduce) {
+	.candy-loader {
+		animation: none;
+	}
+}
