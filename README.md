@@ -1,5 +1,7 @@
 # Candy Loader
 
+![Candy Loader](asset/screenshot.png)
+
 (Project 1 of 60)
 A Christmas candy-inspired loading animation built with HTML and CSS without a single line of JavaScript.
 
